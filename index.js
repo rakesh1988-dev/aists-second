@@ -66,7 +66,7 @@ const symbolSchema = new mongoose.Schema({
 });
 const Symbol = mongoose.model('symbol', symbolSchema);
 const calldata = async () => {
-  const result = await Symbol.find().skip(30).limit(30)
+  const result = await Symbol.find().skip(10).limit(10)
   result.forEach(async(item, index) => {
     const symbol = item['Symbol']
     await scrapeWithCheerio(symbol)
